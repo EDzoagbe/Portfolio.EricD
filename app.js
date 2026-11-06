@@ -9,6 +9,11 @@
       if (el.dataset.fr === undefined) el.dataset.fr = el.innerHTML;
       el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.dataset.fr;
     }
+    var hl = document.querySelectorAll('[data-href-en]');
+    for (var h = 0; h < hl.length; h++) {
+      if (hl[h].dataset.hrefFr === undefined) hl[h].dataset.hrefFr = hl[h].getAttribute('href');
+      hl[h].setAttribute('href', lang === 'en' ? hl[h].getAttribute('data-href-en') : hl[h].dataset.hrefFr);
+    }
     var t = document.querySelector('title'); if (t) t.textContent = t.dataset.fr !== undefined && lang !== 'en' ? t.dataset.fr : t.getAttribute('data-en');
     var b = document.querySelectorAll('.lang button');
     for (var j = 0; j < b.length; j++) b[j].setAttribute('aria-pressed', b[j].dataset.lang === lang ? 'true' : 'false');
