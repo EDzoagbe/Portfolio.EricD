@@ -50,6 +50,14 @@ h1 em{font-style:italic;font-weight:500;color:var(--gold2)}
 .btn-gold{background:var(--gold2);color:#1b1608}.btn-gold:hover{background:#e2bb68}
 .btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .btn-line{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(16,21,28,.4)}.btn-line:hover{background:rgba(255,255,255,.1)}
+.cv-menu{position:relative}
+.cv-menu summary{list-style:none;cursor:pointer;user-select:none}
+.cv-menu summary::-webkit-details-marker{display:none}
+.cv-menu .caret{width:14px;height:14px;transition:transform .15s}
+.cv-menu[open] .caret{transform:rotate(180deg)}
+.cv-list{position:absolute;left:0;top:calc(100% + 8px);z-index:20;min-width:100%;display:grid;gap:2px;padding:6px;border-radius:14px;background:var(--night2);border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.cv-list a{display:block;white-space:nowrap;padding:10px 14px;border-radius:9px;color:#fff;text-decoration:none;font-weight:500;font-size:14.5px}
+.cv-list a:hover,.cv-list a:focus-visible{background:rgba(212,168,81,.18);color:var(--gold2)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .chip{font-size:13px;color:#d8dde5;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 13px;background:rgba(16,21,28,.55)}
 .info{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:14px;color:#aeb7c4}
