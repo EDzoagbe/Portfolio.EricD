@@ -31,6 +31,13 @@
   var q = /[?&]lang=(en|fr)/.exec(location.search);
   var start = q ? q[1] : saved || 'fr';
   if (start === 'en') apply('en');
+  var cv = document.querySelector('.cv-menu');
+  if (cv) {
+    document.addEventListener('click', function (e) { if (!cv.contains(e.target)) cv.removeAttribute('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cv.removeAttribute('open'); });
+    var cl = cv.querySelectorAll('a');
+    for (var c = 0; c < cl.length; c++) cl[c].addEventListener('click', function () { cv.removeAttribute('open'); });
+  }
   var btn = document.querySelector('.menu-btn');
   if (btn) btn.addEventListener('click', function () {
     var h = document.querySelector('header'); var o = h.classList.toggle('open'); btn.setAttribute('aria-expanded', o ? 'true' : 'false');
